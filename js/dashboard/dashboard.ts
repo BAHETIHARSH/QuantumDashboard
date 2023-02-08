@@ -1,6 +1,7 @@
-
-const courses = [
+import { Course } from './interfaces';
+const courses: Course[] = [
     {
+        image: "src.jpg",
         title: "Acceleration",
         subject: "Physics",
         grade: 7,
@@ -23,6 +24,7 @@ const courses = [
         isreported: true
     },
     {
+        image: "src.jpg",
         title: "Displacement, Velocity and Speed",
         subject: "Physics 2",
         grade: 6,
@@ -43,8 +45,37 @@ const courses = [
 
 ]
 
-console.log(courses);
+// console.log(courses);
+const inner_container = document.getElementsByClassName("inner-container")[0]
+console.log(inner_container);
 
-for (const course of courses) {
-    console.log(course);
+
+// for (let i = 0; i < courses.length; i++) {
+// const card = inner_container.createElement('div')
+// card.classList.add('card')
+//     card.innerHTML = courses[i].title
+//     const image = document.createElement('img')
+//     image.setAttribute('src', courses[i].image)
+//     card.appendChild(image)
+// }
+
+// Interaction in dashboard
+
+const toggle = document.getElementsByClassName("navbar-toggler")[0];
+console.log(toggle);
+
+const navbar = document.getElementsByClassName("navbar-nav")[0];
+console.log(navbar);
+
+toggle.addEventListener("click", () => {
+    console.log("card-title");
+    navbar.classList.toggle("hide");
+});
+
+function togglemuted(x) {
+    x.classList.toggle("image-muted");
+}
+
+function togglefavourite(x) {
+    x.classList.toggle("unfavourite");
 }

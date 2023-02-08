@@ -11,9 +11,9 @@
   background-repeat: no-repeat;
   background-position: 100%;
   font-weight: 500;
-  &:focus {
-    outline: none;
-  }
+  // &:focus {
+  //   outline: none;
+  // }
 }
 
 body {
@@ -222,7 +222,9 @@ p {
 }
 
 .inner-container {
-  grid-template-columns: repeat(2, 1fr);
+  ////grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(471px, 1fr));
+
   display: grid;
   grid-gap: 25px;
   margin: auto;
@@ -231,6 +233,9 @@ p {
     position: relative;
     border-radius: 0;
     background: #fff;
+    width: 471px;
+    margin-left: auto;
+    margin-right: auto;;
     .favourite {
       position: absolute;
       display: inline-block;
@@ -239,6 +244,8 @@ p {
       width: 20px;
       height: 24px;
       background: url("../icons/favourite.svg");
+      cursor: pointer;
+
     }
     .unfavourite {
       position: absolute;
@@ -247,6 +254,8 @@ p {
       width: 20px;
       height: 24px;
       background: url("../icons/unfavourite.svg");
+      cursor: pointer;
+
     }
     .expired {
       position: absolute;
@@ -311,15 +320,20 @@ p {
             }
           }
 
-          .dropdown select {
+          .dropdown {
+            select {
             @include dropdown();
             display: block;
             width: 100%;
             margin-top: 16px;
+            &.noclasses {
+              color: #222222;
+              opacity: 0.4;
+
+            }
           }
-          .noclass {
-            color: red;
           }
+          
         }
       }
     }
@@ -467,9 +481,23 @@ p {
     }
   }
   .inner-container {
-    grid-template-columns: repeat(1, minmax(476px, 571px));
+    //grid-template-columns: repeat(1, minmax(476px, 571px));
     .card {
       margin: inherit auto;
+      width: 571px;
+
+    }
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+ 
+  .inner-container {
+    .card {
+      margin: inherit auto;
+      width: 571px;
+
     }
   }
 }

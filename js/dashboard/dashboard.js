@@ -1,5 +1,7 @@
+"use strict";
 var courses = [
     {
+        image: "src.jpg",
         title: "Acceleration",
         subject: "Physics",
         grade: 7,
@@ -22,6 +24,7 @@ var courses = [
         isreported: true
     },
     {
+        image: "src.jpg",
         title: "Displacement, Velocity and Speed",
         subject: "Physics 2",
         grade: 6,
@@ -40,4 +43,29 @@ var courses = [
         isreported: true
     }
 ];
-console.log(courses);
+// console.log(courses);
+var inner_container = document.getElementsByClassName("inner-container")[0];
+console.log(inner_container);
+// for (let i = 0; i < courses.length; i++) {
+//     const card = document.createElement('div')
+//     card.classList.add('card')
+//     card.innerHTML = courses[i].title
+//     const image = document.createElement('img')
+//     image.setAttribute('src', courses[i].image)
+//     card.appendChild(image)
+// }
+// Interaction in dashboard
+var toggle = document.getElementsByClassName("navbar-toggler")[0];
+console.log(toggle);
+var navbar = document.getElementsByClassName("navbar-nav")[0];
+console.log(navbar);
+toggle.addEventListener("click", function () {
+    console.log("card-title");
+    navbar.classList.toggle("hide");
+});
+function togglemuted(x) {
+    x.classList.toggle("image-muted");
+}
+function togglefavourite(x) {
+    x.classList.toggle("unfavourite");
+}

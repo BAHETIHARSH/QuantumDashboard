@@ -283,10 +283,6 @@ p {
   font-weight: 500;
 }
 
-.container-body .sceondary-title .dropdown select:focus {
-  outline: none;
-}
-
 .container-body .sceondary-title .dropdown img {
   width: 12px;
   height: 24px;
@@ -294,8 +290,8 @@ p {
 }
 
 .inner-container {
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (minmax(471px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(471px, 1fr));
   display: -ms-grid;
   display: grid;
   grid-gap: 25px;
@@ -309,6 +305,9 @@ p {
   position: relative;
   border-radius: 0;
   background: #fff;
+  width: 471px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .inner-container .card .favourite {
@@ -319,6 +318,7 @@ p {
   width: 20px;
   height: 24px;
   background: url("../icons/favourite.svg");
+  cursor: pointer;
 }
 
 .inner-container .card .unfavourite {
@@ -328,6 +328,7 @@ p {
   width: 20px;
   height: 24px;
   background: url("../icons/unfavourite.svg");
+  cursor: pointer;
 }
 
 .inner-container .card .expired {
@@ -433,12 +434,9 @@ p {
   margin-top: 16px;
 }
 
-.inner-container .card .card-contents .col-8 .card-body .dropdown select:focus {
-  outline: none;
-}
-
-.inner-container .card .card-contents .col-8 .card-body .noclass {
-  color: red;
+.inner-container .card .card-contents .col-8 .card-body .dropdown select.noclasses {
+  color: #222222;
+  opacity: 0.4;
 }
 
 .inner-container .card .card-footer {
@@ -496,6 +494,8 @@ p {
           justify-content: center;
   padding: 10px 0;
   background-color: #fff;
+  position: relative;
+  bottom: 0;
 }
 
 .footer img {
@@ -652,12 +652,16 @@ p {
     border: none;
     display: inline;
   }
-  .inner-container {
-    -ms-grid-columns: (minmax(476px, 571px))[1];
-        grid-template-columns: repeat(1, minmax(476px, 571px));
-  }
   .inner-container .card {
     margin: inherit auto;
+    width: 571px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .inner-container .card {
+    margin: inherit auto;
+    width: 571px;
   }
 }
 /*# sourceMappingURL=dashboard copy.css.map */
