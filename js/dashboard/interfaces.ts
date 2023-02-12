@@ -3,6 +3,7 @@ export interface Course {
     title: string;
     subject: string;
     grade: number;
+    topics: number;
     additional_grade: number;
     units: number;
     lessons: number;
@@ -12,9 +13,13 @@ export interface Course {
     end_date: null | string;
     isfavourite: boolean;
     isexpired: boolean;
+    footer: Footer
+
+}
+
+export interface Footer {
     iswatch: boolean;
     iscalender: boolean;
     isgraded: boolean;
     isreported: boolean
-
 }
